@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out 0s 2;
+}
+
+:root {
+  /* ☀️ LIGHT MODE */
+  /* Purpose: Clean, bright, RED accents (#c30010) */
+
+  --background: #ffffff;
+  /* Pure White */
+  --foreground: #0f172a;
+  /* Slate 900 */
+
+  /* Primary Brand: RED */
+  --primary: #c30010;
+  --primary-foreground: #ffffff;
+
+  /* Secondary: Very Light Gray */
+  --secondary: #f8fafc;
+  /* Slate 50 */
+  --secondary-foreground: #0f172a;
+
+  /* Accent: RED (Matches Primary in Light Mode) */
+  --accent: #c30010;
+  --accent-foreground: #ffffff;
+
+  /* Muted */
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #c30010;
+
+  --radius: 0.5rem;
+}
+
+
+
+.dark {
+  /* 🌙 DARK MODE Explicit */
+  /* Purpose: Premium, dark, BLUE accents (#2563eb) */
+
+  --background: #020617;
+  /* Slate 950 */
+  --foreground: #f8fafc;
+  /* Slate 50 */
+
+  /* Primary Brand: BLUE */
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+
+  /* Secondary: Dark Slate */
+  --secondary: #1e293b;
+  /* Slate 800 */
+  --secondary-foreground: #f8fafc;
+
+  /* Accent: BLUE */
+  --accent: #2563eb;
+  --accent-foreground: #ffffff;
+
+  --muted: #0f172a;
+  --muted-foreground: #94a3b8;
+  --card: #0f172a;
+  --card-foreground: #f8fafc;
+  --border: #1e293b;
+  --input: #1e293b;
+  --ring: #2563eb;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
